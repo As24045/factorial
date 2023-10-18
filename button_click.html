@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+</head>
+<body>
+    <h1>Factorial Calculator</h1>
+    <form id="factorialForm">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <button type="button" onclick="calculateFactorial()">Calculate Factorial</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        // function calculateFactorial() {
+        //     const inputNumber = document.getElementById("number").value;
+        //     const resultElement = document.getElementById("result");
+            
+        //     const number = parseInt(inputNumber);
+
+        //     if (!isNaN(number)) {
+        //         if (number < 0) {
+        //             resultElement.textContent = "Factorial is not defined for negative numbers.";
+        //         } else {
+        //             resultElement.textContent = `Factorial of ${number} is ${factorial(number)}.`;
+        //         }
+        //     } else {
+        //         resultElement.textContent = "Please enter a valid number.";
+        //     }
+        // }
+
+        // function factorial(n) {
+        //     if (n === 0 || n === 1) {
+        //         return 1;
+        //     } else {
+        //         return n * factorial(n - 1);
+        //     }
+        // }
+
+
+        function calculateFactorial() {
+            
+            const inputNumber = parseInt(document.querySelector("#number").value);
+            const resultElement = document.querySelector("#result");
+
+            if (!isNaN(inputNumber) && inputNumber < 0) {
+                
+                    resultElement.textContent = "Factorial is not define for negative numbers";
+            }
+            else {
+                resultElement.textContent = `Factorial of ${inputNumber} is ${factorial(inputNumber)}.`;
+            }        
+        }
+
+        function factorial(n) {
+            if (n ===0 || n ===1) {
+                return 1;
+            }
+            else {
+                return n * factorial(n -1);
+            }
+        }
+        
+    </script>
+</body>
+</html>
